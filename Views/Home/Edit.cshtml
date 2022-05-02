@@ -1,0 +1,35 @@
+﻿@model MVCAssign4.Models.Account
+    @{ 
+        Layout = null;
+    }
+
+<h1>Editing Details for AccountNo: @Model.AccountNumber</h1>
+
+
+@{
+
+    using (Html.BeginForm("EditAccount", "Home"))
+
+
+    {
+    @Html.HiddenFor(a => a.AccountNumber)
+
+    <p>
+        Name: @Html.TextBoxFor(a => a.Name)
+    </p>
+
+    <p>
+        Current Balance: @Html.TextBoxFor(a => a.CurrentBalance)
+    </p>
+
+    <input type="submit" value="Save Modifications" />
+
+        }
+    }
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
